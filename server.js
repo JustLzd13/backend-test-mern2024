@@ -5,6 +5,7 @@ import { usersRoutes } from "./routes/usersRoutes.js";
 
 // Initializing Express app
 const app = express();
+const port = 4000;
 
 // Middleware to receive JSON
 app.use(express.json());
@@ -17,6 +18,6 @@ app.use("/api/users", usersRoutes);
 mongoose.connect("mongodb+srv://admin:admin123@newdatabase.p8tkuzd.mongodb.net/demo_db?retryWrites=true&w=majority&appName=newdatabase").then(()=> {
     console.log("connected to DB successfully");
     // Listening to requests if DB connection is successful    
-    app.listen(4000, "localhost", ()=> console.log("listening to port 4000"));
+    app.listen(port, "localhost", ()=> console.log(`listening to port ${port}`));
 })
 .catch((err)=> console.log(err));
