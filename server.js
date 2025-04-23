@@ -14,7 +14,7 @@ app.use("/api/posts", postsRoutes);
 app.use("/api/users", usersRoutes);
 
 // Connecting to MongoDB using Mongoose
-mongoose.connect("mongodb+srv://admin:admin123@newdatabase.p8tkuzd.mongodb.net/demo_db?retryWrites=true&w=majority&appName=newdatabase").then(()=> {
+mongoose.connect("mongodb://admin:admin123@ac-lmckrfw-shard-00-00.p8tkuzd.mongodb.net:27017,ac-lmckrfw-shard-00-01.p8tkuzd.mongodb.net:27017,ac-lmckrfw-shard-00-02.p8tkuzd.mongodb.net:27017/demo_db?ssl=true&replicaSet=atlas-13q2kr-shard-0&authSource=admin&retryWrites=true&w=majority").then(()=> {
     console.log("connected to DB successfully");
     // Listening to requests if DB connection is successful    
     app.listen(4000, "localhost", ()=> console.log("listening to port 4000"));
