@@ -18,6 +18,6 @@ app.use("/api/users", usersRoutes);
 mongoose.connect("mongodb+srv://admin:admin123@newdatabase.p8tkuzd.mongodb.net/demo_db?retryWrites=true&w=majority&appName=newdatabase").then(()=> {
     console.log("connected to DB successfully");
     // Listening to requests if DB connection is successful    
-    app.listen(port, "localhost", ()=> console.log(`listening to port ${port}`));
+    app.listen(port, ()=> console.log(`listening to port ${port}`));
 })
 .catch((err)=> console.log(err));
